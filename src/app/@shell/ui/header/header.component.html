@@ -1,10 +1,12 @@
-<header class="d-flex flex-wrap align-items-center justify-content-center py-3 mb-4">
+<header class="d-flex flex-wrap align-items-center justify-content-center py-3 mb-4 top-0 w-full h-16 shadow bg-opacity-10 bg-neutral-50 dark:bg-neutral-700 backdrop-blur-lg backdrop-filter">
   <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
     <img src="/assets/images/logo.webp" alt="logo" width="78px" height="50px">
   </a>
 
   <div class="col-md-3 text-end">
-    <button type="button" class="btn btn-outline-primary me-2">Đăng nhập</button>
+    <button type="button" class="btn btn-outline-primary me-2" *ngIf="authService.isLoggedIn == false" (click)="onClickSignIn()">Đăng nhập</button>
+    <button type="button" class="btn btn-outline-primary me-2" *ngIf="authService.isLoggedIn == true" (click)="onClickSignOut()">Đăng xuất</button>
     <button type="button" class="btn btn-primary">Đăng ký miễn phí</button>
   </div>
+
 </header>
